@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>A worked example of the Contact Us signposting widget</title>
+		<script>
+			/************************
+			/ This worked example taken from https://www.birmingham.gov.uk/info/50044/contact_us_form
+			/
+			/ The original was made by Simon Gray, https://www.bigtown.star-one.org.uk/
+			/
+			/ You're free to adapt it and use it in any online project you like
+			/ But it would be nice if you could preserve the attribution in the source, just out of politeness
+			/************************/
+			
+			function showService(d) {
+			    var elements = document.getElementsByClassName('service')
+			
+			    for (var i = 0; i < elements.length; i++){
+			        elements[i].style.display = "none";
+			    }
+				document.getElementById(d).style.display = "block";
+			}
+			function showForm(d) {
+			    var elements = document.getElementsByClassName('formlink')
+			
+			    for (var i = 0; i < elements.length; i++){
+			        elements[i].style.display = "none";
+			    }
+				document.getElementById(d).style.display = "block";
+			}
+		</script>
+		<style>
+			.formlink {
+			display: none;
+			padding-top: 2em;
+			}
+			.service {
+			display: none;
+			}
+		</style>
+		<div id="contactus" class="boxed">
+			<div class="form form--block">
+				<h2 class="form__heading">Please select the service you require:</h2>
+				<label for="main-service">Service: </label>
+				<select class="form__field" onChange="showService(this.value)" id="main-service">
+					<option value="">--- Please select ---</option>
+					<option value="benefits">Benefits</option>
+					<option value="caz">Clean Air Zone</option>
+					<option value="counciltax">Council tax</option>
+					<option value="foi">Freedom of Information</option>
+					<option value="highways">Highways</option>
+					<option value="homelessness">Homelessness</option>
+					<option value="housingrents">Housing rents</option>
+					<option value="housingrepairs">Housing repairs</option>
+					<option value="onlineaccountissues">Online account issues</option>
+					<option value="parking">Parking</option>
+					<option value="parks">Parks</option>
+					<option value="pestcontrol">Pest control & animal welfare</option>
+					<option value="planning">Planning</option>
+					<option value="recruitment">Recruitment</option>
+					<option value="rubbish">Rubbish / waste collection</option>
+					<option value="schooladmission">School Admission Information</option>
+					<option value="schoolappeals">School Appeals</option>
+					<option value="socialservices">Social Services</option>
+					<option value="complaints">Comments, complaints and compliments</option>
+					<option value="other">Other</option>
+				</select>
+				<div id="benefits" class="service">
+					<h3>Benefits</h3>
+					<label for="benefits-enquiry-type">Benefits enquiry type: </label>
+					<select onChange="showForm(this.value)" id="benefits-enquiry-type">
+						<option value="">--- Please select ---</option>
+						<option value="newclaim">Make a new claim</option>
+						<option value="cic">Report a change in circumstances</option>
+						<option value="bencalc">Benefit calculator</option>
+						<option value="landlordenquiry">Landlord enquiry</option>
+						<option value="landlordportalenquiry">Landlord Portal enquiry</option>
+						<option value="claimantenquiry">Claimant enquiry</option>
+						<option value="otherbenefitenquiry">Other benefit enquiry</option>
+					</select>
+					<div id="newclaim" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/benefitsnewclaims">online benefits form</a> to access this service.</p>
+					</div>
+					<div id="cic" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/info/20017/benefits_and_support/376/report_a_change_in_circumstances/3">change in circumstances online formlink</a> to access this service.</p>
+					</div>
+					<div id="bencalc" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/benefitsnewclaims">online benefits form</a> to access this service.</p>
+					</div>
+					<div id="landlordenquiry" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/landlord">landlord advice online form</a> to access this service.</p>
+					</div>
+					<div id="landlordportalenquiry" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/xfp/form/1039">landlord portal enquiry online form</a> to access this service.</p>
+					</div>
+					<div id="claimantenquiry" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/forms/form/225/en/benefits_claimant_enquiry">claimant enquiry form</a> to access this service.</p>
+					</div>
+					<div id="otherbenefitenquiry" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/forms/form/226/en/other_benefit_enquiry">other benefit enquiry form</a> to access this service.</p>
+					</div>
+				</div>
+				<div id="caz" class="service">
+					<h3>Clean Air Zone / CAZ</h3>
+					<label for="caz-enquiry-type">Clean Air Zone enquiry type: </label>
+					<select onChange="showForm(this.value)" id="caz-enquiry-type">
+						<option value="">--- Please select ---</option>
+						<option value="caz-info">Clean Air Zone general information</option>
+						<option value="caz-pay">Clean Air Zone payment</option>
+						<option value="caz-check">Clean Air Zone vehicle check</option>
+					</select>
+					<div id="caz-info" class="formlink">
+						<p>Please go to the <a href="https://www.brumbreathes.co.uk/">Brum Breathes</a> website for general information about the Clean Air Zone.</p>
+					</div>
+					<div id="caz-pay" class="formlink">
+						<p>Please go to the <a href="https://pay.drive-clean-air-zone.service.gov.uk/vehicles/enter_details">national Clean Air Zone payment form</a> to pay your charge.</p>
+					</div>
+					<div id="caz-check" class="formlink">
+						<p>Please go to the <a href="https://pay.drive-clean-air-zone.service.gov.uk/vehicles/enter_details">national Clean Air Zone vehicle checker</a> to find out if you need to pay the charge.</p>
+					</div>
+				</div>
+				<div id="counciltax" class="service">
+					<h3>Council tax</h3>
+					<label for="council-tax-enquiry-type">Council tax enquiry type: </label>
+					<select onChange="showForm(this.value)" id="council-tax-enquiry-type">
+						<option value="">--- Please select ---</option>
+						<option value="dd">Council tax payment by Direct Debit</option>
+						<option value="debitcard">Council tax payment by debit / credit card</option>
+						<option value="changeaddress">Report a change of address</option>
+						<option value="ctaxcic">Report a change in circumstance</option>
+						<option value="death">Notify us of a death</option>
+						<option value="spd">Apply for a single person discount</option>
+						<option value="disabled">Apply for a reduction due to disabled facilities</option>
+					</select>
+					<div id="dd" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/directdebit">Direct Debit online form</a> to access this service.</p>
+					</div>
+					<div id="debitcard" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/paying-council-tax">council tax payment online form</a> to access this service.</p>
+					</div>
+					<div id="changeaddress" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/info/50179/change_in_circumstances">change in circumstances form</a> to access this service.</p>
+					</div>
+					<div id="ctaxcic" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/info/50179/change_in_circumstances">change in circumstances form</a> to access this service.</p>
+					</div>
+					<div id="death" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/info/50179/change_in_circumstances/1706/tell_us_if_someone_in_your_household_dies">notification of deceased online form</a> to access this service.</p>
+					</div>
+					<div id="spd" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/spd">single person discount online form</a> to access this service.</p>
+					</div>
+					<div id="disabled" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/reduction-for-disabled-facilities-form">reduction due to disabled facilities online form</a> to access this service.</p>
+					</div>
+				</div>
+				<div id="foi" class="service">
+					<h2>Freedom of Information</h2>
+					<p>Please go to our <a href="https://www.birmingham.gov.uk/info/20154/foi_and_data_protection/408/make_a_freedom_of_information_request">Freedom of Information page</a> to make a request.</p>
+				</div>
+				<div id="highways" class="service">
+					<h3>Highways</h3>
+					<p>Please go to our <a href="https://www.birmingham.gov.uk/reporthighways">Highways online forms</a> to access this service.</p>
+				</div>
+				<div id="homelessness" class="service">
+					<h3>Homelessness</h3>
+					<p>Please go to our <a href="https://www.birmingham.gov.uk/forms/form/228/en/homelessness_enquiry">Homelessness online form</a> to access this service.</p>
+				</div>
+				<div id="housingrents" class="service">
+					<h3>Housing rents</h3>
+					<p>Please go to our <a href="https://www.birmingham.gov.uk/xfp/form/1059">Housing rents enquiry form</a> to access this service.</p>
+				</div>
+				<div id="housingrepairs" class="service">
+					<h3>Housing repairs</h3>
+					<p>Please go to our <a href="https://www.birmingham.gov.uk/order-a-repair">Housing repairs online forms</a> to access this service.</p>
+				</div>
+				<div id="onlineaccountissues" class="service">
+					<h3>Online account issues</h3>
+					<p>Please go to our <a href="https://www.birmingham.gov.uk/xfp/form/612">online account issues online form</a> to access this service.</p>
+				</div>
+				<div id="parking" class="service">
+					<h3>Parking</h3>
+					<label for="parking-enquiry-type">Parking enquiry type: </label>
+					<select onChange="showForm(this.value)" id="parking-enquiry-type">
+						<option value="">--- Please select ---</option>
+						<option value="payparking">Pay a parking fine</option>
+						<option value="disputeparking">Dispute a parking fine</option>
+						<option value="paybuslane">Pay a bus lane fine</option>
+						<option value="disputebuslane">Dispute a bus lane fine</option>
+						<option value="permit">Parking permit enquiry</option>
+						<option value="bluebadge">Blue badge enquiries</option>
+						<option value="machinefault">Report a ticket machine fault</option>
+						<option value="paymobile">Pay for parking by mobile phone</option>
+						<option value="reportparking">Report illegal parking</option>
+						<option value="otherparking">Other parking enquiry</option>
+					</select>
+					<div id="payparking" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/pcn">parking fines online form</a> to access this service.</p>
+					</div>
+					<div id="disputeparking" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/pcn">parking fines online form</a> to access this service.</p>
+					</div>
+					<div id="paybuslane" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/buslanes">bus lane fines online form</a> to access this service.</p>
+					</div>
+					<div id="disputebuslane" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/buslanes">bus lane fines online form</a> to access this service.</p>
+					</div>
+					<div id="permit" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/forms/form/231/en/parking_permit_enquiry">parking permits online form</a> to access this service.</p>
+					</div>
+					<div id="bluebadge" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/blue-badge-scheme">blue badge scheme online forms</a> to access this service.</p>
+					</div>
+					<div id="machinefault" class="formlink">
+						<p>Please go to the <a href="https://www.birmingham.gov.uk/info/20109/parking/1243/report_a_ticket_machine_fault/">Report a ticket machine fault page</a> to access this service.</p>
+					</div>
+					<div id="paymobile" class="formlink">
+						<p>Please go to the <a href="https://www.myringgo.co.uk/">RingGo website</a> to access this service.</p>
+					</div>
+					<div id="reportparking" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/reportparking">report illegal parking page</a> to access this service.</p>
+					</div>
+					<div id="otherparking" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/forms/form/232/en/other_parking_enquiry">other parking enquiry online form</a> to access this service.</p>
+					</div>
+				</div>
+				<div id="parks" class="service">
+					<h3>Parks</h3>
+					<p>Please go to one of our <a href="https://www.birmingham.gov.uk/reportparks">parks online forms</a> to access this service.</p>
+				</div>
+				<div id="pestcontrol" class="service">
+					<h3>Pest control & animal welfare</h3>
+					<p>Please go to one of our <a href="https://www.birmingham.gov.uk/environmental-health">environmental health online forms</a> to access this service.</p>
+				</div>
+				<div id="planning" class="service">
+					<h3>Planning</h3>
+					<p>Please go to our <a href="https://www.birmingham.gov.uk/planning">planning online forms</a> to access this service.</p>
+				</div>
+				<div id="recruitment" class="service">
+					<h3>Recruitment</h3>
+					<p>Please go to our <a href="https://www.birmingham.gov.uk/jobs"> job vacancies pages</a> to view the full list of Birmingham City Council jobs, and find out about working with us.</p>
+				</div>
+				<div id="rubbish" class="service">
+					<h3>Rubbish / waste collection</h3>
+					<p>Please go to our <a href="https://www.birmingham.gov.uk/missedcollections">missed collection page</a> to access this form. </p>
+					<p>For other information about waste and recycling, please go to our <a href="https://www.birmingham.gov.uk/wasteservices">waste services information</a> to access these services.</p>
+				</div>
+				<div id="schooladmission" class="service">
+					<h3>School Admission Information</h3>
+					<p>Please go to our <a href="https://www.birmingham.gov.uk/schooladmissions">school admissions pages</a> to access this service.</p>
+				</div>
+				<div id="schoolappeals" class="service">
+					<h3>School Appeals</h3>
+					<p>Please go to our <a href="https://www.birmingham.gov.uk/info/20119/school_admissions/207/appeal_against_a_decision_to_refuse_your_child_a_school_place">school admission appeals pages</a> to access this service.</p>
+				</div>
+				<div id="socialservices" class="service">
+					<h3>Social Services</h3>
+					<label for="social-care-enquiry-type">Social care enquiry type: </label>
+					<select onChange="showForm(this.value)" id="social-care-enquiry-type">
+						<option value="">--- Please select ---</option>
+						<option value="scadults">Adult social services</option>
+						<option value="scchildrens">Children's social services</option>
+					</select>
+					<div id="scadults" class="formlink">
+						<p>Please go to our <a href="https://www.birmingham.gov.uk/info/20018/adult_social_care_and_health/115/how_to_contact_us_about_adult_social_care_services_and_support">Adult Social Care contact page</a> to access this service.</p>
+					</div>
+					<div id="scchildrens" class="formlink">
+						<p>Please go to our <a href="https://www.birminghamchildrenstrust.co.uk/contact">Children's Social Care contact page</a> to access this service.</p>
+					</div>
+				</div>
+				<div id="complaints" class="service">
+					<h3>Comments, complaints and compliments</h3>
+					<p>Please go to our <a href="https://www.birmingham.gov.uk/yourviews">Your Views online form</a> to submit your comments, compliments or complaints about our services.</p>
+				</div>
+				<div id="other" class="service">
+					<h3>Other</h3>
+					<p>Please go to our <a href="https://www.birmingham.gov.uk/forms/form/233/en/other_enquiry">Other Enquiry online form</a> to access this service.</p>
+				</div>
+			</div>
+		</div>
+		</body>
+</html>
